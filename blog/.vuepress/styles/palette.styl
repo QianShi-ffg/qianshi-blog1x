@@ -1,0 +1,180 @@
+// 默认值
+$accentColor = rgb(180, 100, 226)// 主题颜色
+$textColor = #fff                   // 文本颜色
+$borderColor = transparent            // 边框线颜色
+$codeBgColor = red                      // 代码块背景色
+$backgroundColor = transparent                 // 悬浮块背景色
+
+@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap');
+.home-blog .hero {
+    margin: 0 auto;
+    // padding-bottom: 2.6rem;
+    // box-sizing: content-box;
+    div:first-child {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        h1 {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            color: white;
+            font-size: 3rem;
+            // font-family: 'Bubblegum Sans', cursive;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        p {
+            margin: 0 auto;
+            color: white;
+            font-family: 'Bubblegum Sans', cursive;
+            font-weight: bold;
+        }
+    }
+    .bubble {
+        position: absolute;
+        background: white;
+        border-radius: 100%;
+    }
+}
+.home-blog .home-blog-wrapper {
+    margin-top: 4.8rem;
+}
+
+.navbar .links {
+    background-color: transparent;
+}
+
+body {
+    font-family: 'Bubblegum Sans', cursive;
+}
+// nav
+html.light .navbar {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: saturate(180%) blur(15px);
+}
+html.dark .navbar {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(180%) blur(15px);
+}
+
+
+// 搜索结果列表
+html.light .links .search-box ul.suggestions {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+html.light .links .search-box .suggestions li{
+    background: transparent;
+    &:hover {
+        background: #f3f4f5;
+    }
+}
+html.dark .navbar .links .search-box ul.suggestions {
+    background: rgba(34, 39, 46, 0.8);
+    backdrop-filter: saturate(180%) blur(15px);
+}
+html.dark .navbar .links .search-box .suggestions li{
+    &:hover {
+        background: #161516;
+        span {
+            color: #d5d4d9;
+        }
+    }
+}
+
+
+// 搜索框
+html.light .navbar .links .search-box {
+    border: none;
+    input{
+        color: #000;
+        border: 2px solid #eaecef;
+        border-radius: 17px;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-sizing: border-box;
+        transition: all 0.5s;
+        &:focus {
+            border-color: $accentColor;
+            box-shadow: 0 0 5px 1px $accentColor;
+        }
+    }
+}
+html.dark .navbar .links .search-box {
+    border: none;
+    input{
+        border: 2px solid #3d4b59;
+        border-radius: 17px;
+        background-color: #1f2633;
+        box-sizing: border-box;
+        transition: all 0.5s;
+        &:focus {
+            border-color: #5f6a75;
+            box-shadow: 0 0 5px 1px #5f6a75;
+        }
+    }
+}
+
+
+// home图标
+.nav-link.router-link-exact-active.router-link-active {
+    color: #fff;
+    .iconfont.reco-home {
+        color: #fff;
+    }
+}
+
+
+// 下拉二级菜单
+html.light .nav-dropdown {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    li{
+        background: transparent;
+        &:hover {
+            background: #f3f4f5;
+        }
+    }
+}
+
+html.dark .dropdown-wrapper .nav-dropdown {
+    background: rgba(34, 39, 46, 0.8);
+    backdrop-filter: saturate(180%) blur(15px);
+    li.dropdown-item{
+        a {
+            &:hover {
+                background: #161516;
+                color: #d5d4d9;
+            }
+            .iconfont.reco-github {
+                color: #d5d4d9;
+            }
+        }
+        
+    }
+}
+
+// 主题切换面板
+html.light .color-picker-menu .mode-options{
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    .color-mode-options li{
+        background: rgba(255, 255, 255, 0);
+    }
+    .color-mode-options li.active{
+        background: $accentColor;
+    }
+}
+html.dark .color-picker-menu .mode-options{
+    background: rgba(34, 39, 46, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    .color-mode-options li{
+        background: rgba(255, 255, 255, 0);
+    }
+    .color-mode-options li.active{
+        background: $accentColor;
+    }
+}
