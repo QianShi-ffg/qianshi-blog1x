@@ -1,7 +1,7 @@
 <template>
   <div id="theme">
-    <img :src="require('../public/light.svg')" alt="" @click="themeClick('light')" v-if="currentClassName === 'light'"/>
-    <img :src="require('../public/dark.svg')" alt="" @click="themeClick('dark')" v-else/>
+    <img :src="require('../public/light.svg')" alt="" @click="themeClick('dark')" v-if="currentClassName === 'light'"/>
+    <img :src="require('../public/dark.svg')" alt="" @click="themeClick('light')" v-else/>
   </div>
 </template>
 
@@ -43,8 +43,8 @@
           '--default-color-2': 'rgba(0, 0, 0, 0.2)',
           '--default-color-1': 'rgba(0, 0, 0, 0.1)',
           '--background-color': '#181818',
-          '--box-shadow': '0 1px 8px 0 rgba(0, 0, 0, 0.6)',
-          '--box-shadow-hover': '0 2px 16px 0 rgba(0, 0, 0, 0.7)',
+          '--box-shadow': '0 1px 8px 0 rgba(0, 0, 0, 0.7)',
+          '--box-shadow-hover': '0 2px 16px 0 rgba(0, 0, 0, 0.8)',
           '--text-color': 'rgba(255, 255, 255, 0.8)',
           '--text-color-sub': '#8B8B8B',
           '--border-color': 'rgba(0, 0, 0, 0.3)',
@@ -64,11 +64,17 @@
     },
     mounted() {
       this.dom = document.getElementsByTagName('html')[0]
+      const themeDom = document.getElementById('theme')
+      document.getElementsByClassName('color-picker')[0].append(themeDom);
       if (sessionStorage.getItem('theme')) {
+        console.log(sessionStorage.getItem('theme'), 52)
         this.currentClassName = sessionStorage.getItem('theme')
+      } else {
+        console.log(9999999999999999)
+        this.currentClassName = 'light'
       }
-      this.currentClassName = document.getElementsByTagName('html')[0].className
       this.root = document.querySelector(":root")
+      this.init()
     },
     methods: {
       init() {
@@ -88,7 +94,7 @@
       },
       themeClick(value) {
         console.log(66666)
-        this.currentClassName === value
+        this.currentClassName = value
         this.init()
       }
     }
@@ -97,6 +103,12 @@
 
 <style lang="stylus" scoped>
 #theme {
-  background-color: red;  
+  background-color: red;
+  img {
+    position: absolute;
+    top: 3px;
+    left: -20px;
+    width: 28px;
+  }
 }
 </style>
