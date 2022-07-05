@@ -10,7 +10,6 @@
 .anchor-down {
   display: block;
   margin: 12rem auto 0;
-  bottom: 45px;
   width: 20px;
   height: 20px;
   font-size: 34px;
@@ -18,7 +17,7 @@
   animation: bounce-in 5s infinite;
   position: absolute;
   left: 50%;
-  bottom: 30%;
+  bottom: 25%;
   margin-left: -10px;
   cursor: pointer;
 }
@@ -37,6 +36,16 @@
   }
 }
 
+@-webkit-keyframes anchorDown {
+  0% {
+    filter: drop-shadow(0px 1px 0px #fff);
+  }
+
+  100% {
+    filter: drop-shadow(0px 1px 3px #fff);
+  }
+}
+
 .anchor-down::before {
   content: "";
   width: 20px;
@@ -47,6 +56,7 @@
   transform: rotate(135deg);
   position: absolute;
   bottom: 10px;
+  filter: drop-shadow(0px 1px 2px #fff);
 }
 
 .anchor-down::after {
@@ -57,6 +67,7 @@
   border-right: 5px solid rgba(255, 255, 255, 0.9);
   border-top: 5px solid rgba(255, 255, 255, 0.9);
   transform: rotate(135deg);
+  filter: drop-shadow(0px 1px 2px #fff);
 }
 </style>
 <template></template>

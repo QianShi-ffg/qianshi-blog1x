@@ -148,22 +148,60 @@ export default {
           tumblr: ""
       },
       PALETTE: [
-          "#ca7a92",
-          "#A8CBC6",
-          "#817487",
-          "#4A3F55",
-          "#E5B8BD",
-          "#C2617E",
-          "#C2617E",
-          "#B7D7B6",
-          "#b46d95",
-          "#c5848b",
-          "#79A7B5",
-          "#D29595",
-          "#E8A8C9",
-          "#C45F41",
-          "#EF99A3",
-          "#48939D"
+        {
+          color: "#904b6a",
+          bg: require('../public/bg.jpg')
+        },
+        {
+          color: "#3457a8",
+          bg: require('../public/bg1.jpg')
+        },
+        {
+          color: "#633f7e",
+          bg: require('../public/bg2.jpg')
+        },
+        {
+          color: "#773444",
+          bg: require('../public/bg3.jpg')
+        },
+        {
+          color: "#342373",
+          bg: require('../public/bg4.jpg')
+        },
+        {
+          color: "#e8666b",
+          bg: require('../public/bg5.jpg')
+        },
+        {
+          color: "#4d2439",
+          bg: require('../public/bg6.jpg')
+        },
+        {
+          color: "#b15818",
+          bg: require('../public/bg7.jpg')
+        },
+        {
+          color: "#8e4f37",
+          bg: require('../public/bg8.jpg')
+        },
+        {
+          color: "#608da4",
+          bg: require('../public/bg9.jpg')
+        }
+          
+          // "#4A3F55",
+          // "#E5B8BD",
+          // "#C2617E",
+          // "#C2617E",
+          // "#B7D7B6",
+          // "#b46d95",
+          // "#c5848b",
+          // "#79A7B5",
+          // "#D29595",
+          // "#E8A8C9",
+          // "#C45F41",
+          // "#EF99A3",
+          // "#48939D"
       ],
       API_URL: "https://v1.hitokoto.cn/",
       loadingBar: null,
@@ -182,7 +220,8 @@ export default {
       await this.initDom()
       await this.init()
     })
-    
+    const randomQuoteDom = document.getElementById('randomQuote')
+    document.getElementsByClassName('hero')[0].append(randomQuoteDom);
   },
   methods: {
     initDom() {
@@ -211,7 +250,9 @@ export default {
       this.hitokoto.textContent = data.hitokoto;
       this.from.textContent = data.from;
       this.loadingBar.classList.add("complete");
-      this.root.style.setProperty("--theme-color", this.sample(this.PALETTE));
+      const currentShow = this.sample(this.PALETTE)
+      this.root.style.setProperty("--theme-color", currentShow.color);
+      this.root.style.setProperty("--theme-bg", `url(${currentShow.bg})`);
     },
     setSocialBtn() {
       // [this.twitter, this.faecbook, this.tumblr].forEach(socialBtn => {
@@ -252,6 +293,11 @@ export default {
 
 <style scoped>
 #randomQuote {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 35%;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,14 +315,15 @@ export default {
   --progress-color: #4a89dc;
   --progress-value: 0;
   --ease-out-quartic: cubic-bezier(0.165, 0.84, 0.44, 1);
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   width: 120px;
-  height: 6px;
+  height: 6px !important;
   background: var(--bar-color);
   transform: translate(-50%, -50%);
   transition: 0.6s var(--ease-out-quartic);
+  z-index: 20;
 }
 .loading-bar::before {
   position: absolute;
@@ -296,13 +343,16 @@ export default {
 }
 
 .quote-box {
-  width: 345px;
+  width: 450px;
   padding: 20px 25px;
   color: var(--theme-color);
-  background: #eceffc;
+  background: rgba(236, 239, 252, 0.5);
+  backdrop-filter: saturate(180%) blur(5px);
   border-radius: 24px;
 }
 .quote-box .quote-text {
+  max-height: 120px;
+  min-height: 70px;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -313,14 +363,18 @@ export default {
   background-color: transparent;
 }
 .quote-box .quote-text .hitokoto {
+  height: auto !important;
   font-size: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: self-start;
 }
 .quote-box .quote-text .hitokoto .hitokoto-text:empty::before {
   content: "数据获取失败";
 }
 .quote-box .quote-text .from {
   align-self: flex-end;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 .quote-box .quote-text .from .from-text:empty::before {
   content: "佚名";
@@ -329,7 +383,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .btn-share {

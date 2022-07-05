@@ -6,19 +6,20 @@ $codeBgColor = red                      // 代码块背景色
 $backgroundColor = transparent                 // 悬浮块背景色
 :root {
 --theme-color: rgb(180, 100, 226);
+
 }
 
 @import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap');
 // 动态主题色
 ::-webkit-scrollbar {
-    width: 0px;
-    background-color: transparent;
+    width: 0px !important;
+    background-color: transparent !important;
     // width: 4px;
     // background-color: var(--theme-color);
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px var(--theme-color);
+    -webkit-box-shadow: inset 0 0 5px var(--theme-color) !important;
     background: var(--theme-color) !important;
 }
 .color-picker .color-button .iconfont {
@@ -91,8 +92,13 @@ $backgroundColor = transparent                 // 悬浮块背景色
     background: var(--theme-color) !important;
 }
 
+// #nprogress .peg {
+//     background: var(--theme-color) !important;
+// }
+
 .home-blog .hero {
     // filter: hue-rotate(90deg);
+    background: var(--theme-bg) center center / cover no-repeat !important;
     margin: 0 auto;
     // padding-bottom: 2.6rem;
     // box-sizing: content-box;
@@ -105,13 +111,18 @@ $backgroundColor = transparent                 // 悬浮块背景色
         text-align: center;
         h1 {
             position: relative;
+            top: -5rem;
             z-index: 2;
             display: inline-block;
             color: white;
-            font-size: 3rem;
+            font-size: 3.5rem;
+            text-shadow: 5px 5px 15px var(--theme-color);
             // font-family: 'Bubblegum Sans', cursive;
             font-weight: bold;
             text-transform: uppercase;
+        }
+        .description {
+            display: none;    
         }
         p {
             margin: 0 auto;
@@ -135,7 +146,7 @@ $backgroundColor = transparent                 // 悬浮块背景色
 }
 
 body {
-    font-family: 'Bubblegum Sans', cursive;
+    font-family: 'Bubblegum Sans', cursive !important;
 }
 // nav
 html.light .navbar {
@@ -145,6 +156,13 @@ html.light .navbar {
 html.dark .navbar {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: saturate(180%) blur(15px);
+}
+html.dark .quote-box {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(180%) blur(15px);
+    .hitokoto {
+        color: #fff;
+    }
 }
 
 

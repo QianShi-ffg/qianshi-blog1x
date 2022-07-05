@@ -134,7 +134,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
 
 #bgText {
