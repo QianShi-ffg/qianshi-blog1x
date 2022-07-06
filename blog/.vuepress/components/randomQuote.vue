@@ -244,15 +244,15 @@ export default {
       await this.setSocialBtn();
     },
     async setQuote() {
+      const currentShow = this.sample(this.PALETTE)
+      this.root.style.setProperty("--theme-color", currentShow.color);
+      this.root.style.setProperty("--theme-bg", `url(${currentShow.bg})`);
       this.loadingBar.style.setProperty("--progress-value", `${0}`);
       this.loadingBar.classList.remove("complete");
       let data = JSON.parse((await this.request({ url: this.API_URL, method: "GET" })));
       this.hitokoto.textContent = data.hitokoto;
       this.from.textContent = data.from;
       this.loadingBar.classList.add("complete");
-      const currentShow = this.sample(this.PALETTE)
-      this.root.style.setProperty("--theme-color", currentShow.color);
-      this.root.style.setProperty("--theme-bg", `url(${currentShow.bg})`);
     },
     setSocialBtn() {
       // [this.twitter, this.faecbook, this.tumblr].forEach(socialBtn => {
@@ -296,7 +296,7 @@ export default {
   position: absolute;
   right: 0;
   left: 0;
-  bottom: 35%;
+  bottom: 40%;
   margin: auto;
   display: flex;
   justify-content: center;

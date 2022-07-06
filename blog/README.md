@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: 111111111
+heroText: 千拾的博客
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
