@@ -19,6 +19,11 @@ module.exports = {
     ],
     // ["script", { src: "/js/theme.js" }]
   ],
+  "locales": {
+    "/": {
+      "lang": "zh-CN"
+    }
+  },
   "theme": "reco",
   "themeConfig": {
     "nav": [
