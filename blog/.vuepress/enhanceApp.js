@@ -88,6 +88,24 @@ const initTheme = () => {
       img.src = require('./public/light.svg')
     }
     init()
+    themeColor(currentClassName)
+  }
+  const themeColor = (value) => {
+    if (sessionStorage.getItem('themeColor')) {
+      if(value === 'light') {
+        root.style.setProperty("--theme-color", `hsl(${sessionStorage.getItem('themeColor')})`);
+      } else {
+        let themeColorList = sessionStorage.getItem('themeColor').split(',')
+        themeColorList[2] = '70%'
+        root.style.setProperty("--theme-color", `hsl(${themeColorList.join(',')})`);
+      }
+    } else {
+      if(value === 'light') {
+        root.style.setProperty("--theme-color", `hsl(200, 26%, 55%)`);
+      } else {
+        root.style.setProperty("--theme-color", `hsl(200, 26%, 70%)`);
+      }
+    }
   }
   if (sessionStorage.getItem('theme')) {
     currentClassName = sessionStorage.getItem('theme')
@@ -101,6 +119,7 @@ const initTheme = () => {
     img.src = require('./public/light.svg')
   }
   init()
+  themeColor(currentClassName)
 }
 
 export default ({

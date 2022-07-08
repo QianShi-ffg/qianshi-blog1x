@@ -149,43 +149,43 @@ export default {
       },
       PALETTE: [
         {
-          color: "#904b6a",
+          color: "333, 32%, 43%",
           bg: require('../public/bg.jpg')
         },
         {
-          color: "#3457a8",
+          color: "222, 53%, 43%",
           bg: require('../public/bg1.jpg')
         },
         {
-          color: "#633f7e",
+          color: "274, 33%, 37%",
           bg: require('../public/bg2.jpg')
         },
         {
-          color: "#773444",
+          color: "346, 39%, 34%",
           bg: require('../public/bg3.jpg')
         },
         {
-          color: "#342373",
+          color: "253, 53%, 29%",
           bg: require('../public/bg4.jpg')
         },
         {
-          color: "#e8666b",
+          color: "358, 74%, 65%",
           bg: require('../public/bg5.jpg')
         },
         {
-          color: "#4d2439",
+          color: "329, 36%, 22%",
           bg: require('../public/bg6.jpg')
         },
         {
-          color: "#b15818",
+          color: "25, 76%, 39%",
           bg: require('../public/bg7.jpg')
         },
         {
-          color: "#8e4f37",
+          color: "17, 44%, 39%",
           bg: require('../public/bg8.jpg')
         },
         {
-          color: "#608da4",
+          color: "200, 27%, 51%",
           bg: require('../public/bg9.jpg')
         }
           
@@ -212,7 +212,8 @@ export default {
       twitter: null,
       faecbook: null,
       tumblr: null,
-      progress: null
+      progress: null,
+      currentClassName: null
     }
   },
   mounted() {
@@ -245,8 +246,24 @@ export default {
     },
     async setQuote() {
       const currentShow = this.sample(this.PALETTE)
-      this.root.style.setProperty("--theme-color", currentShow.color);
       this.root.style.setProperty("--theme-bg", `url(${currentShow.bg})`);
+      if (sessionStorage.getItem('theme')) {
+        this.currentClassName = sessionStorage.getItem('theme')
+        if (this.currentClassName === 'light') {
+          this.root.style.setProperty("--theme-color", `hsl(${currentShow.color})`);
+        } else {
+          let themeColorList = currentShow.color.split(',')
+          themeColorList[2] = '70%'
+          this.root.style.setProperty("--theme-color", `hsl(${themeColorList.join(',')})`);
+        }
+      } else {
+        this.currentClassName = 'light'
+        this.root.style.setProperty("--theme-color", `hsl(${currentShow.color})`);
+      }
+      // this.root.style.setProperty("--theme-color", `hsl(${currentShow.color})`);
+      
+      sessionStorage.setItem('themeColor', currentShow.color)
+      // console.log(currentShow.color, currentShow.color.split(',')[2])
       this.loadingBar.style.setProperty("--progress-value", `${0}`);
       this.loadingBar.classList.remove("complete");
       let data = JSON.parse((await this.request({ url: this.API_URL, method: "GET" })));

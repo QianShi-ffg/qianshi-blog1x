@@ -1,11 +1,12 @@
 // 默认值
-// $accentColor = rgb(180, 100, 226)// 主题颜色
+// $accentColor = rgb(208, 167, 231)// 主题颜色
 $textColor = #fff                   // 文本颜色
 $borderColor = transparent            // 边框线颜色
 $codeBgColor = red                      // 代码块背景色
 $backgroundColor = transparent                 // 悬浮块背景色
 :root {
---theme-color: rgb(127, 125, 128);
+// --theme-color: hsl(280, 1%, 50%);
+--theme-color: hsl(200, 26%, 55%)
 }
 @import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap');
 
@@ -80,6 +81,22 @@ $backgroundColor = transparent                 // 悬浮块背景色
 }
 #nprogress .bar {
     background: var(--theme-color) !important;
+}
+
+.links .search-box .suggestions {
+    &:hover {
+        color: var(--theme-color) !important;
+    }    
+}
+.links .search-box .suggestions li{
+    background: transparent;
+    &:hover {
+        color: var(--theme-color) !important;
+        background: #f3f4f5;
+        a {
+            color: var(--theme-color) !important;
+        }
+    }
 }
 
 // #nprogress .peg {
@@ -165,6 +182,7 @@ html.dark .quote-box {
 html.light .links .search-box ul.suggestions {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: var(--box-shadow);
 }
 html.light .links .search-box .suggestions li{
     background: transparent;
@@ -175,6 +193,7 @@ html.light .links .search-box .suggestions li{
 html.dark .navbar .links .search-box ul.suggestions {
     background: rgba(34, 39, 46, 0.8);
     backdrop-filter: saturate(180%) blur(15px);
+    box-shadow: var(--box-shadow);
 }
 html.dark .navbar .links .search-box .suggestions li{
     &:hover {
@@ -287,6 +306,12 @@ html.dark {
 
 
 // 下拉二级菜单
+.dropdown-wrapper .nav-dropdown {
+    padding: 5px;
+    li {
+        border-radius: 4px;
+    }
+}
 html.light .nav-dropdown {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
@@ -343,5 +368,37 @@ html.dark {
     }
 }
 
+
+// html.light {
+    #valine {
+        .vpanel {
+            .vheader {
+                input {
+                    &:focus {
+                        border-bottom: 2px solid var(--theme-color) !important;
+                    }
+                }
+            }
+            .vrow .vsubmit.vbtn:hover {
+                color: var(--theme-color);
+                border-color: var(--theme-color);
+            }
+        }
+        .vcards {
+            .vhead .vnick {
+                color: var(--theme-color) !important;    
+            }
+            .vmeta .vat:hover {
+                color: var(--theme-color) !important;
+                border-color: var(--theme-color) !important;
+            }
+        }
+        .vpower {
+            a {
+                color: var(--theme-color) !important;
+            }
+        }
+    }
+// }
 
 
