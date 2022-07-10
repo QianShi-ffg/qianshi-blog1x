@@ -40,16 +40,16 @@ module.exports = {
         "link": "/timeline/",
         "icon": "reco-date"
       },
-      {
-        "text": "杂文",
-        "icon": "reco-message",
-        "items": [
-          {
-            "text": "vuepress-reco",
-            "link": "/docs/theme-reco/"
-          }
-        ]
-      },
+      // {
+      //   "text": "杂文",
+      //   "icon": "reco-message",
+      //   "items": [
+      //     {
+      //       "text": "vuepress-reco",
+      //       "link": "/docs/theme-reco/"
+      //     }
+      //   ]
+      // },
       {
         "text": "联系我",
         "icon": "reco-message",
@@ -62,14 +62,14 @@ module.exports = {
         ]
       }
     ],
-    "sidebar": {
-      "/docs/theme-reco/": [
-        "",
-        "theme",
-        "plugin",
-        "api"
-      ]
-    },
+    // "sidebar": {
+    //   "/docs/theme-reco/": [
+    //     "",
+    //     "theme",
+    //     "plugin",
+    //     "api"
+    //   ]
+    // },
     "type": "blog",
     "blogConfig": {
       "category": {
@@ -90,10 +90,14 @@ module.exports = {
       // },
       {
         "title": "小白龙",
-        // "desc": "Enjoy when you can, and endure when you must.",
-        // "avatar": "/friendLogo/xiaobailong.jpg",
         "logo": "https://xiaolong-oss-cdn.oss-cn-guangzhou.aliyuncs.com/myblog/images/logo.jpg",
         "link": "https://blog.xiaolong0418.com/"
+      },
+      {
+        "title": "一步一个脚印",
+        "desc": "一步一个脚印抵达成功的彼岸！",
+        "logo": "https://www.stepbystep.cf/img/avatar_hu46bc9b9ee9b6ad90c62ec6260983f5e7_5496_300x0_resize_q75_h2_box_2.webp",
+        "link": "https://www.stepbystep.cf/"
       },
       // {
       //   "title": "vuepress-theme-reco",

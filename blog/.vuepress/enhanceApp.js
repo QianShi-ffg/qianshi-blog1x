@@ -128,6 +128,7 @@ export default ({
   router, // 当前应用的路由实例
   siteData // 站点元数据
 }) => {
+  console.log(siteData)
   const vue = new Vue()
   router.afterEach((to, from) => {
     // 解决document is not defined
