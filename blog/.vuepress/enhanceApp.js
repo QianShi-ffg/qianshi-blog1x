@@ -1,3 +1,5 @@
+import loading from './loading.js'
+
 const initTheme = () => {
   let currentClassName = 'light'
   // let document
@@ -134,10 +136,13 @@ export default ({
     // 解决document is not defined
     Vue.mixin({
       mounted(){
+        loading()
         setTimeout(()=>{
           initTheme()
-        },200)
+          document.getElementById('loader-wrapper').style.display = 'none'
+        },1000)
       }
     })
   })
+  
 };
