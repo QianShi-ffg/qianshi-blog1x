@@ -1,6 +1,6 @@
 module.exports = {
   "title": "千拾",
-  "description": "11",
+  "description": "千拾的博客",
   "dest": "public",
   "head": [
     [
@@ -25,6 +25,7 @@ module.exports = {
   },
   "theme": "reco",
   "themeConfig": {
+    "subSidebar": "auto",
     "valineConfig": {
       "appId": 'l4H1063vSwLwq3etA1TJPlGk-gzGzoHsz',// your appId
       "appKey": 'r76XnYuIgIywb4SKnYdasF3w', // your appKey
@@ -99,6 +100,12 @@ module.exports = {
         "logo": "https://www.stepbystep.cf/img/avatar_hu46bc9b9ee9b6ad90c62ec6260983f5e7_5496_300x0_resize_q75_h2_box_2.webp",
         "link": "https://www.stepbystep.cf/"
       },
+      {
+        "title": "milk",
+        // "desc": "一步一个脚印抵达成功的彼岸！",
+        "logo": "	http://www.milkcxb.cn/avatar.jpeg",
+        "link": "http://www.milkcxb.cn/"
+      }
       // {
       //   "title": "vuepress-theme-reco",
       //   "desc": "A simple and beautiful vuepress Blog & Doc theme.",
