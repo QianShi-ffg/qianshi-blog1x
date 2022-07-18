@@ -199,6 +199,11 @@ html.dark .quote-box {
 
 // 搜索结果列表
 html.light .links .search-box ul.suggestions {
+    &:hover {
+        a {
+            color: #000;
+        }    
+    }
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: var(--box-shadow);
@@ -207,9 +212,17 @@ html.light .links .search-box .suggestions li{
     background: transparent;
     &:hover {
         background: #f3f4f5;
+        a {
+            color: var(--theme-color);
+        }
     }
 }
 html.dark .navbar .links .search-box ul.suggestions {
+    &:hover {
+        a {
+            color: #d5d4d9;
+        }    
+    }
     background: rgba(34, 39, 46, 0.8);
     backdrop-filter: saturate(180%) blur(15px);
     box-shadow: var(--box-shadow);
@@ -419,6 +432,27 @@ html.dark {
         }
     }
 // }
+
+.page .side-bar.sub-sidebar-wrapper {
+    right: 8rem; 
+    li.level-2 {
+        border-left: 2px solid var(--border-color)
+        a:hover {
+            font-weight: 700;
+            color: var(--theme-color)
+        }
+    } 
+    li:hover a {
+        color: var(--theme-color)
+    }
+    li.level-2.active {
+        border-left: 2px solid var(--theme-color);
+        a {
+            font-weight: 700;
+            color: var(--theme-color)
+        }
+    }
+}
 
 @import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan&display=swap");
 #loader-wrapper {
