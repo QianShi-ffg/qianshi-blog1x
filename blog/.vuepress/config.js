@@ -94,18 +94,18 @@ module.exports = {
         "logo": "https://xiaolong-oss-cdn.oss-cn-guangzhou.aliyuncs.com/myblog/images/logo.jpg",
         "link": "https://blog.xiaolong0418.com/"
       },
-      {
-        "title": "一步一个脚印",
-        "desc": "一步一个脚印抵达成功的彼岸！",
-        "logo": "https://www.stepbystep.cf/img/avatar_hu46bc9b9ee9b6ad90c62ec6260983f5e7_5496_300x0_resize_q75_h2_box_2.webp",
-        "link": "https://www.stepbystep.cf/"
-      },
-      {
-        "title": "milk",
-        // "desc": "一步一个脚印抵达成功的彼岸！",
-        "logo": "	http://www.milkcxb.cn/avatar.jpeg",
-        "link": "http://www.milkcxb.cn/"
-      }
+      // {
+      //   "title": "一步一个脚印",
+      //   "desc": "一步一个脚印抵达成功的彼岸！",
+      //   "logo": "https://www.stepbystep.cf/img/avatar_hu46bc9b9ee9b6ad90c62ec6260983f5e7_5496_300x0_resize_q75_h2_box_2.webp",
+      //   "link": "https://www.stepbystep.cf/"
+      // },
+      // {
+      //   "title": "milk",
+      //   // "desc": "一步一个脚印抵达成功的彼岸！",
+      //   "logo": "	http://www.milkcxb.cn/avatar.jpeg",
+      //   "link": "http://www.milkcxb.cn/"
+      // }
       // {
       //   "title": "vuepress-theme-reco",
       //   "desc": "A simple and beautiful vuepress Blog & Doc theme.",
